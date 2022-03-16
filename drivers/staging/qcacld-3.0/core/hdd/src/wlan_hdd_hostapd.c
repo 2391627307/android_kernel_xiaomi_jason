@@ -9047,7 +9047,17 @@ static void hdd_update_beacon_rate(hdd_adapter_t *adapter,
 	enum ieee80211_band band1;
 	band1 = params->chandef.chan->band;
 	enum  nl80211_band band;
-	band = band1;
+	if(band1 == IEEE80211_BAND_2GHZ )
+	{
+		band = NL80211_BAND_2GHZ;
+	}
+	else if(band1 == IEEE80211_BAND_5GHZ )
+	{
+		band = NL80211_BAND_5GHZ;
+	}
+	else
+	{
+	}
 	beacon_rate_mask = &params->beacon_rate;
 	if (beacon_rate_mask->control[band].legacy) {
 		adapter->sessionCtx.ap.sapConfig.beacon_tx_rate =
