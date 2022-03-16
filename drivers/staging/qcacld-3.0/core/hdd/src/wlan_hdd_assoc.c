@@ -2196,6 +2196,9 @@ void hdd_save_gtk_params(hdd_adapter_t *adapter,
  *
  * Return: none
  */
+
+#define NL80211_BAND_2GHZ IEEE80211_BAND_2GHZ
+#define NL80211_BAND_5GHZ IEEE80211_BAND_5GHZ
 static void hdd_send_re_assoc_event(struct net_device *dev,
 	hdd_adapter_t *pAdapter, tCsrRoamInfo *pCsrRoamInfo,
 	uint8_t *reqRsnIe, uint32_t reqRsnLength)
