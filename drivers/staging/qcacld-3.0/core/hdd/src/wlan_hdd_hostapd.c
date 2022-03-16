@@ -9044,7 +9044,7 @@ static void hdd_update_beacon_rate(hdd_adapter_t *adapter,
 		struct cfg80211_ap_settings *params)
 {
 	struct cfg80211_bitrate_mask *beacon_rate_mask;
-	enum  nl80211_band band;
+	enum  ieee80211_band band;
 
 	band = params->chandef.chan->band;
 	beacon_rate_mask = &params->beacon_rate;
