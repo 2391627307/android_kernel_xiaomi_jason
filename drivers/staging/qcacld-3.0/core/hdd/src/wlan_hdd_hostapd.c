@@ -9019,6 +9019,7 @@ static uint16_t hdd_get_data_rate_from_rate_mask(struct wiphy *wiphy,
 		band = NL80211_BAND_2GHZ;
 	}
 	sband = wiphy->bands[band];
+	
 	if (sband) {
 		sband_bitrates = sband->bitrates;
 		sband_n_bitrates = sband->n_bitrates;
