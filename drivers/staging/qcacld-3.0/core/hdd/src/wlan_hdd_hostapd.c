@@ -9049,20 +9049,9 @@ static void hdd_update_beacon_rate(hdd_adapter_t *adapter,
 		struct cfg80211_ap_settings *params)
 {
 	struct cfg80211_bitrate_mask *beacon_rate_mask;
-	enum ieee80211_band band1;
 	enum  nl80211_band band;
-	band1 = params->chandef.chan->band;
-	if(band1 == IEEE80211_BAND_2GHZ )
-	{
-		band = NL80211_BAND_2GHZ;
-	}
-	else if(band1 == IEEE80211_BAND_5GHZ )
-	{
-		band = NL80211_BAND_5GHZ;
-	}
-	else
-	{
-	}
+
+	band = params->chandef.chan->band;
 	beacon_rate_mask = &params->beacon_rate;
 	if (beacon_rate_mask->control[band].legacy) {
 		adapter->sessionCtx.ap.sapConfig.beacon_tx_rate =
